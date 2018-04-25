@@ -1,6 +1,8 @@
+# https://github.com/harivishnup/docker-gitweb.git
+
 FROM centos:7
 
-MAINTAINER Horatiu Eugen Vlad "horatiu@vlad.eu"
+MAINTAINER github.com/harivishnup
 
 ENV GIT_PROJECT_NAME="dummy" \
     GIT_DESCRIPTION="Dummy repository" \

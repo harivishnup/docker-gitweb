@@ -55,7 +55,7 @@
       "source": {
         "type": "Git",
         "git": {
-          "uri": "https://github.com/iconoeugen/docker-gitweb.git"
+          "uri": "https://github.com/harivishnup/docker-gitweb.git"
         }
       },
       "strategy": {

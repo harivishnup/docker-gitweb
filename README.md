@@ -1,4 +1,4 @@
-# iconoeugen/docker-gitweb
+# harivishnup/docker-gitweb
 
 A docker image to run GitWeb
 
@@ -13,7 +13,7 @@ This docker image will start a Gitweb server with only one Git repository.
 ### Clone this project:
 
 ``` bash
-git clone https://github.com/iconoeugen/docker-gitweb
+git clone https://github.com/harivishnup/docker-gitweb
 cd docker-gitweb
 ```
 

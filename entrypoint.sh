@@ -1,4 +1,5 @@
 #!/bin/bash
+# https://github.com/harivishnup/docker-gitweb.git
 
 GIT_PROJECT_NAME=${GIT_PROJECT_NAME:-dummy}
 GIT_PROJECT_ROOT=${GIT_PROJECT_ROOT:-/var/lib/git}
