@@ -1,4 +1,4 @@
-# https://github.com/harivishnup/docker-gitweb.git
+# https://github.com/harivishnup/gitweb_v1.git
 
 FROM centos:7
 
@@ -12,7 +12,7 @@ ENV GIT_PROJECT_NAME="dummy" \
 RUN yum -y install httpd git gitweb\
     && yum clean all
 
-RUN sed -e "s/Listen 80.*/Listen 8080/" -i /etc/httpd/conf/httpd.conf \
+RUN sed -e "s/Listen 80.*/Listen 8082/" -i /etc/httpd/conf/httpd.conf \
     && mkdir -p /var/lib/git \
     && chown apache:root /var/lib/git \
     && chmod ug+rwx /var/lib/git \
@@ -29,6 +29,6 @@ RUN chown apache /entrypoint.sh \
 
 USER apache
 
-EXPOSE 8080
+EXPOSE 8082
 
 CMD [ "/entrypoint.sh" ]
