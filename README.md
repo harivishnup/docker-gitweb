@@ -1,4 +1,4 @@
-# harivishnup/docker-gitweb
+# harivishnup/gitweb_v1
 
 A docker image to run GitWeb
 
@@ -13,8 +13,8 @@ This docker image will start a Gitweb server with only one Git repository.
 ### Clone this project:
 
 ``` bash
-git clone https://github.com/harivishnup/docker-gitweb
-cd docker-gitweb
+git clone https://github.com/harivishnup/gitweb_v1
+cd gitweb_v1
 ```
 
 ### Make your own GitWeb image
@@ -28,13 +28,13 @@ docker build -t gitweb_gitweb .
 Run your built image:
 
 ``` bash
-docker run --name gitweb_test -p 8080:8080 --detach gitweb_gitweb
+docker run --name gitweb_test -p 8082:8082 --detach gitweb_gitweb
 ```
 
 Check running container:
 
 ``` bash
-git ls-remote http://localhost:8080/git/dummy.git
+git ls-remote http://localhost:8082/git/dummy.git
 ```
 
 Stop running container:
@@ -55,7 +55,7 @@ The repository is store within the container under the path `/var/lib/git`. To m
 a directory into the container:
 
 ``` bash
-docker run --name gitweb_test -p 8080:8080 -v /tmp/gitweb:/var/lib/git --detach gitweb_gitweb
+docker run --name gitweb_test -p 8082:8082 -v /tmp/gitweb:/var/lib/git --detach gitweb_gitweb
 ```
 
 Make sure that the user `uid=48(apache)` (or whatever user you use when starting the container with option `-u`) has
@@ -93,7 +93,7 @@ docker-compose rm
 ## Environment Variables
 
 - **GIT_PROJECT_NAME**: Git project repository name. The repository will be available at
-`http://localhost:8080/git/<GIT_PROJECT_NAME>.git`. Defaults to `dummy`.
+`http://localhost:8082/git/<GIT_PROJECT_NAME>.git`. Defaults to `dummy`.
 - **GIT_DESCRIPTION**: Short single line description of the project. Defaults to `Dummy repository`.
 - **GIT_CATEGORY**: Singe line category of a project, used to group projects. Defaults to empty string.
 - **GIT_OWNER**: Set repository’s owner that is displayed in the project list and summary page. Defaults to `Owner`.
@@ -103,13 +103,13 @@ docker-compose rm
 Environment variables can be set by adding the --env argument in the command line, for example:
 
 ``` bash
-docker run --env GIT_PROJECT_NAME="super" --name gitweb_test -p 8080:8080 --detach gitweb_gitweb
+docker run --env GIT_PROJECT_NAME="super" --name gitweb_test -p 8082:8082 --detach gitweb_gitweb
 ```
 
 To clone the `super` repository from the container started before, use the command:
 
 ``` bash
-git clone http://localhost:8080/git/super.git
+git clone http://localhost:8082/git/super.git
 ```
 
 ## OpenShift
@@ -138,7 +138,7 @@ oc new-app gitweb -p GIT_PROJECT_NAME=super
 
 ## Tests
 
-Access the GitWeb UI at: http://localhost:8080/git
+Access the GitWeb UI at: http://localhost:8082/git
 
 Push content to the new empty repository:
 
@@ -149,6 +149,6 @@ git init
 touch README
 git add README
 git commit -m "First commit"
-git remote add test http://localhost:8080/git/dummy.git
+git remote add test http://localhost:8082/git/dummy.git
 git push test master
 ```
