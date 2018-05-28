@@ -143,7 +143,6 @@ Access the GitWeb UI at: http://localhost:8082/git
 Push content to the new empty repository:
 
 ``` bash
-```
 mkdir -p /tmp/example && cd /tmp/example
 echo "Example Readme" > README
 git init
@@ -152,3 +151,4 @@ git add .
 git commit -m "Example First commit at $(date)"
 git remote add test http://localhost:8082/git/example.git
 git push test master
+```
