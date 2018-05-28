@@ -11,4 +11,4 @@ gitweb:
         - https_proxy
         - ftp_proxy
         - no_proxy
-        - GIT_PROJECT_NAME=dummy
+        - GIT_PROJECT_NAME=example

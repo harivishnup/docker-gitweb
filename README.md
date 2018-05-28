@@ -34,7 +34,7 @@ docker run --name gitweb_test -p 8082:8082 --detach gitweb_gitweb
 Check running container:
 
 ``` bash
-git ls-remote http://localhost:8082/git/dummy.git
+git ls-remote http://localhost:8082/git/example.git
 ```
 
 Stop running container:
@@ -93,8 +93,8 @@ docker-compose rm
 ## Environment Variables
 
 - **GIT_PROJECT_NAME**: Git project repository name. The repository will be available at
-`http://localhost:8082/git/<GIT_PROJECT_NAME>.git`. Defaults to `dummy`.
-- **GIT_DESCRIPTION**: Short single line description of the project. Defaults to `Dummy repository`.
+`http://localhost:8082/git/<GIT_PROJECT_NAME>.git`. Defaults to `example`.
+- **GIT_DESCRIPTION**: Short single line description of the project. Defaults to `Example repository`.
 - **GIT_CATEGORY**: Singe line category of a project, used to group projects. Defaults to empty string.
 - **GIT_OWNER**: Set repository’s owner that is displayed in the project list and summary page. Defaults to `Owner`.
 
@@ -143,12 +143,12 @@ Access the GitWeb UI at: http://localhost:8082/git
 Push content to the new empty repository:
 
 ``` bash
-mkdir dummy
-cd dummy
-git init
-touch README
-git add README
-git commit -m "First commit"
-git remote add test http://localhost:8082/git/dummy.git
-git push test master
 ```
+mkdir -p /tmp/example && cd /tmp/example
+echo "Example Readme" > README
+git init
+git config --global user.name "Harivishnu"
+git add .
+git commit -m "Example First commit at $(date)"
+git remote add test http://localhost:8082/git/example.git
+git push test master

@@ -1,7 +1,7 @@
 #!/bin/bash
 # https://github.com/harivishnup/gitweb_v1.git
 
-GIT_PROJECT_NAME=${GIT_PROJECT_NAME:-dummy}
+GIT_PROJECT_NAME=${GIT_PROJECT_NAME:-example}
 GIT_PROJECT_ROOT=${GIT_PROJECT_ROOT:-/var/lib/git}
 
 GIT_PROJECT_PATH=${GIT_PROJECT_ROOT}/${GIT_PROJECT_NAME}.git

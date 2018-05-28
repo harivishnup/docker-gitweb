@@ -4,8 +4,8 @@ FROM centos:7
 
 MAINTAINER github.com/harivishnup
 
-ENV GIT_PROJECT_NAME="dummy" \
-    GIT_DESCRIPTION="Dummy repository" \
+ENV GIT_PROJECT_NAME="example" \
+    GIT_DESCRIPTION="Example repository" \
     GIT_CATEGORY="" \
     GIT_OWNER="Owner"
 
